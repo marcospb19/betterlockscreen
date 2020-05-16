@@ -85,6 +85,13 @@ prelock() {
 lock() {
 	#$1 image path
 
+	if [[ ! -f "$1" ]]; then
+		# Image path file does not exist, generate!
+		if [[ -f "~/.wall*" ]]; then
+			update ~/.wall* # Generate on the first go
+		fi
+	fi
+
 	i3lock \
 		-t -i "$1" \
 		--timepos='x+110:h-70' \
