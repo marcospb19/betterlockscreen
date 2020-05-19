@@ -26,6 +26,7 @@ init_filenames() {
 	timecolor=ffffffff
 	datecolor=ffffffff
 	loginbox=00000066
+	stroke=202020f0
 	font="sans-serif"
 	locktext='Type password to unlock...'
 	wallpaper_cmd='feh --bg-fill --no-fehbg'
@@ -271,19 +272,19 @@ update() {
 	echo
 	echo 'Caching images for faster screen locking'
 	# resized
-	convert "$resized" -draw "fill #$loginbox $rectangles" "$l_resized"
+	convert "$resized" -draw "stroke #$stroke fill #$loginbox $rectangles" "$l_resized"
 
 	# dim
-	convert "$dim" -draw "fill #$loginbox $rectangles" "$l_dim"
+	convert "$dim" -draw "stroke #$stroke fill #$loginbox $rectangles" "$l_dim"
 
 	# blur
-	convert "$blur" -draw "fill #$loginbox $rectangles" "$l_blur"
+	convert "$blur" -draw "stroke #$stroke fill #$loginbox $rectangles" "$l_blur"
 
 	# dimblur
-	convert "$dimblur" -draw "fill #$loginbox $rectangles" "$l_dimblur"
+	convert "$dimblur" -draw "stroke #$stroke fill #$loginbox $rectangles" "$l_dimblur"
 
 	# pixel
-	convert "$pixel" -draw "fill #$loginbox $rectangles" "$l_pixel"
+	convert "$pixel" -draw "stroke #$stroke fill #$loginbox $rectangles" "$l_pixel"
 	echo
 	echo 'All required changes have been applied'
 }

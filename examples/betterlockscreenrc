@@ -13,6 +13,7 @@ verifcolor=ffffffff
 timecolor=ffffffff
 datecolor=ffffffff
 loginbox=00000066
+stroke=202020f0
 font="sans-serif"
 locktext='Type password to unlock...'
 lock_timeout=5
