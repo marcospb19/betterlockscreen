@@ -271,20 +271,23 @@ update() {
 
 	echo
 	echo 'Caching images for faster screen locking'
+
+	flags=""
+
 	# resized
-	convert "$resized" -draw "stroke #$stroke fill #$loginbox $rectangles" "$l_resized"
+	convert "$resized" -strokewidth 2 -draw "fill #$loginbox stroke #$stroke $rectangles" "$l_resized"
 
 	# dim
-	convert "$dim" -draw "stroke #$stroke fill #$loginbox $rectangles" "$l_dim"
+	convert "$dim" -strokewidth 2 -draw "fill #$loginbox stroke #$stroke $rectangles" "$l_dim"
 
 	# blur
-	convert "$blur" -draw "stroke #$stroke fill #$loginbox $rectangles" "$l_blur"
+	convert "$blur" -strokewidth 2 -draw "fill #$loginbox stroke #$stroke $rectangles" "$l_blur"
 
 	# dimblur
-	convert "$dimblur" -draw "stroke #$stroke fill #$loginbox $rectangles" "$l_dimblur"
+	convert "$dimblur" -strokewidth 2 -draw "fill #$loginbox stroke #$stroke $rectangles" "$l_dimblur"
 
 	# pixel
-	convert "$pixel" -draw "stroke #$stroke fill #$loginbox $rectangles" "$l_pixel"
+	convert "$pixel" -strokewidth 2 -draw "fill #$loginbox stroke #$stroke $rectangles" "$l_pixel"
 	echo
 	echo 'All required changes have been applied'
 }
