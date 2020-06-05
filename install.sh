@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 if [[ "$USER" != 'root' ]]; then
-	echo "User is not root, exiting." >&2
+	echo "Permission denied." >&2
 	exit 1
 fi
 

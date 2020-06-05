@@ -88,8 +88,8 @@ lock() {
 
 	if [[ ! -f "$1" ]]; then
 		# Image path file does not exist, generate!
-		if [[ -f "~/.wall*" ]]; then
-			update ~/.wall* # Generate on the first go
+		if [[ -f "~/.wall" ]]; then
+			update ~/.wall # Generate on the first go
 		fi
 	fi
 
@@ -104,9 +104,9 @@ lock() {
 		--ringvercolor=$ringvercolor --ringwrongcolor=$ringwrongcolor --indpos='x+280:h-70' \
 		--radius=20 --ring-width=4 --veriftext='' --wrongtext='' \
 		--verifcolor="$verifcolor" --timecolor="$timecolor" --datecolor="$datecolor" \
-		--time-font="$font" --date-font="$font" --layout-font="$font" --verif-font="$font" --wrong-font="$font" \
-		--noinputtext='' --force-clock --pass-media-keys $lockargs
-
+		--time-font="$font" --date-font="terminus" --layout-font="$font" --verif-font="$font" \
+		--wrong-font="$font" --noinputtext='ASD' --force-clock --pass-media-keys $lockargs \
+		--wrongcolor="bbbbbbff"
 }
 
 
